@@ -17,17 +17,7 @@ jobs:
           node-version: 20
       - run: echo "hello world..."
       - run: ls -la
+      - run: sudo docker build -t Shtven/mysql-restapi
+      - run: docker image
 
-  publish-npm:
-    needs: deploy-api
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 20
-          registry-url: https://registry.npmjs.org/
-      - run: npm ci
-      - run: npm publish
-        env:
-          NODE_AUTH_TOKEN: ${{secrets.npm_token}}
+  
