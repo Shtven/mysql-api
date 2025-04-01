@@ -17,7 +17,7 @@ jobs:
           node-version: 20
       - run: echo "hello world..."
       - run: ls -la
-      - run: docker build -t Shtven/mysql-restapi.
+      - run: docker build -t Shtven/mysql-api.
       - run: docker images
       
   
