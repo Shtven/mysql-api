@@ -20,7 +20,7 @@ jobs:
       - run: echo 'DEV_DATABASE_URL=${{secrets.MYSQL_CONN}}'  >> .env
       - run: cat .env
       - run: npm install
-      - run: npm install -g sequelize-cli@5.12.3 
+      - run: npm install -g sequelize-cli@6.2.0
 
       - run: sequelize db:migrate
       - run: docker build -t shtven/mysql-restapi:${{github.sha}} .
